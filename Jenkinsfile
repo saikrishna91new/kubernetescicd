@@ -5,6 +5,7 @@ pipeline {
   stages {
     stage (listWorkspace) {
       steps {
+       sh 'pwd'
        sh 'ls -ltr'   
       }
     }
