@@ -12,7 +12,8 @@ pipeline {
     stage (builddockerimage) {
       steps {
           sh 'ssh jenkins@18.237.185.198 docker ps'
-          sh 'ssh jenkins@18.237.185.198 docker build -t httpd_new ${WORKSPACE}/Dockerfile'
+          sh 'scp Dockerfile jenkins@18.237.185.198'
+          sh 'ssh jenkins@18.237.185.198 docker build -t httpd_new .'
       }
     }
   }
