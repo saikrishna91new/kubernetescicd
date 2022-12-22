@@ -24,5 +24,11 @@ pipeline {
           sh 'docker build -t httpd_new .'
       }
     }
+    stage (deployToKuberentesMaster) {
+      steps {
+        when {
+          brnach 'master'
+        }
+        sh 'scp -rp deployment.yaml jenkins@172.31.15.191:
   }
 }
