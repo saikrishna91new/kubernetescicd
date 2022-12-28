@@ -26,6 +26,7 @@ pipeline {
       steps {
           
           sh 'ls -ltr'
+          sh 'ls -ltr target'
           sh 'docker build -t httpd_new .'
       }
     }
