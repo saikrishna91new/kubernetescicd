@@ -30,6 +30,8 @@ pipeline {
           brnach 'master'
         }
         sh 'scp -o StrictHostKeyChecking=no deployment.yaml jenkins@172.31.15.191:/root/'
-        sh 'ssh jenkins@172.31.15.191 kubectl get deployments"
+        sh 'ssh jenkins@172.31.15.191 kubectl get deployments'
+  }
+}
   }
 }
