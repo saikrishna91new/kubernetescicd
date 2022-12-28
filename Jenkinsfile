@@ -11,6 +11,11 @@ pipeline {
   }
   
   stages {
+    stage('Build'){
+  steps{
+  sh  "mvn clean package"
+  }
+  }
     stage (listWorkspace) {
       steps {
         sh 'echo ${WORKSPACE}'
